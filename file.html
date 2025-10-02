@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Try Our Chatbot</title>
+<style>
+:root{
+--bg:#CFD2D4;
+--accent:#FC5D6C;
+--text:#1a1a1a;
+font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+margin:0;
+background: var(--bg);
+color: var(--text);
+display:flex;
+align-items:center;
+justify-content:center;
+padding:32px;
+}
+.card{
+max-width:520px;
+background:#ffffff;
+border-radius:16px;
+padding:28px;
+box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+text-align:center;
+}
+.logo img{
+width:60px;
+height:60px;
+border-radius:12px;
+object-fit:cover;
+margin-bottom:18px;
+}
+h1{margin:0 0 10px 0;font-size:24px;letter-spacing:-0.2px;color:var(--accent)}
+p{margin:0 0 10px 0;line-height:1.5;color:var(--text)}
+</style>
+</head>
+<body>
+<main class="card" role="main">
+<div class="logo">
+<img src="Gemini_Generated_Image_4dbpxz4dbpxz4dbp.png" alt="Chatbot Logo" />
+</div>
+<h1>Welcome to Yip Chatbot</h1>
+<p>This chatbot is here to answer your general questions about Artificial Intelligence.</p>
+<p><strong>Click on the pop-up to start chatting!</strong></p>
+</main>
+    <script>
+window.addEventListener('mouseover', initLandbot, { once: true });
+window.addEventListener('touchstart', initLandbot, { once: true });
+var myLandbot;
+function initLandbot() {
+  if (!myLandbot) {
+    var s = document.createElement('script');
+    s.type = "module"
+    s.async = true;
+    s.addEventListener('load', function() {
+      myLandbot = new Landbot.Popup({
+        configUrl: 'https://storage.googleapis.com/landbot.online/v3/H-3158721-8RT63U43IP36BDKN/index.json',
+      });
+    });
+    s.src = 'https://cdn.landbot.io/landbot-3/landbot-3.0.0.mjs';
+    var x = document.getElementsByTagName('script')[0];
+    x.parentNode.insertBefore(s, x);
+  }
+}
+</script>
+</body>
+</html>
